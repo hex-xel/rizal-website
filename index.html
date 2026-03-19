@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Film Review: José Rizal (1998)</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#D4AF37',
+                        darkBg: '#121212',
+                        cardBg: '#1e1e1e',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./styles.css">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-darkBg text-[#FDFBF7] antialiased">
+    
+    <!-- Progress Bar -->
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-[#0a0a0a]/90 backdrop-blur-md border-b border-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <a href="#home" class="font-serif text-xl text-gold font-bold tracking-wider">JR '98</a>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-6">
+                        <a href="#introduction" class="nav-link text-gray-300 hover:text-gold px-2 py-2 text-sm font-medium transition-colors duration-300">Intro</a>
+                        <a href="#summary" class="nav-link text-gray-300 hover:text-gold px-2 py-2 text-sm font-medium transition-colors duration-300">Summary</a>
+                        <a href="#historical-accuracy" class="nav-link text-gray-300 hover:text-gold px-2 py-2 text-sm font-medium transition-colors duration-300">Accuracy</a>
+                        <a href="#connection" class="nav-link text-gray-300 hover:text-gold px-2 py-2 text-sm font-medium transition-colors duration-300">Connection</a>
+                        <a href="#reflection" class="nav-link text-gray-300 hover:text-gold px-2 py-2 text-sm font-medium transition-colors duration-300">Reflection</a>
+                        <a href="#conclusion" class="nav-link text-gray-300 hover:text-gold px-2 py-2 text-sm font-medium transition-colors duration-300">Conclusion</a>
+                    </div>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gold hover:text-white focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu (hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#0a0a0a] border-b border-gold/20">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col">
+                <a href="#introduction" class="text-gray-300 hover:text-gold block px-3 py-2 rounded-md text-base font-medium">Introduction</a>
+                <a href="#summary" class="text-gray-300 hover:text-gold block px-3 py-2 rounded-md text-base font-medium">Summary</a>
+                <a href="#historical-accuracy" class="text-gray-300 hover:text-gold block px-3 py-2 rounded-md text-base font-medium">Historical Accuracy</a>
+                <a href="#connection" class="text-gray-300 hover:text-gold block px-3 py-2 rounded-md text-base font-medium">Class Connection</a>
+                <a href="#reflection" class="text-gray-300 hover:text-gold block px-3 py-2 rounded-md text-base font-medium">Reflection</a>
+                <a href="#conclusion" class="text-gray-300 hover:text-gold block px-3 py-2 rounded-md text-base font-medium">Conclusion</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-16">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0 h-full w-full object-cover">
+            <!-- Using Unsplash for a cinematic/monumental placeholder -->
+            <img src="https://images.unsplash.com/photo-1599839619722-39751411ea63?q=80&w=2000&auto=format&fit=crop" alt="Historical Background" class="w-full h-full object-cover opacity-60">
+        </div>
+        <!-- Gradient Overlay -->
+        <div class="absolute inset-0 z-10 hero-gradient"></div>
+        
+        <div class="relative z-20 text-center px-4 max-w-4xl mx-auto fade-in-section">
+            <h1 class="font-serif text-5xl md:text-7xl font-bold text-white mb-6 uppercase tracking-wider drop-shadow-lg">Film Review:<br><span class="text-gold">José Rizal (1998)</span></h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-10 italic font-light">"An Analysis of Historical Accuracy and Legacy"</p>
+            
+            <div class="bg-black/40 backdrop-blur-sm border border-gold/30 p-6 rounded-lg inline-block text-left mb-12 shadow-2xl">
+                <p class="text-sm md:text-base text-gray-200"><strong class="text-gold"><i class="fa-solid fa-user mr-2"></i>Name:</strong> [Your Name Here]</p>
+                <p class="text-sm md:text-base text-gray-200 mt-2"><strong class="text-gold"><i class="fa-solid fa-graduation-cap mr-2"></i>Course & Section:</strong> [Course Block/Section]</p>
+                <p class="text-sm md:text-base text-gray-200 mt-2"><strong class="text-gold"><i class="fa-solid fa-chalkboard-user mr-2"></i>Instructor:</strong> [Instructor Name]</p>
+                <p class="text-sm md:text-base text-gray-200 mt-2"><strong class="text-gold"><i class="fa-solid fa-calendar mr-2"></i>Date:</strong> [Date of Submission]</p>
+            </div>
+            
+            <div>
+                <a href="#introduction" class="inline-flex items-center px-8 py-3 outline outline-1 outline-gold text-gold hover:bg-gold hover:text-darkBg transition-all duration-300 rounded-full font-semibold uppercase tracking-widest text-sm">
+                    Start Reading <i class="fa-solid fa-arrow-down ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Introduction Section -->
+    <section id="introduction" class="py-24 px-4 bg-darkBg">
+        <div class="max-w-4xl mx-auto fade-in-section card-hover bg-cardBg rounded-2xl p-8 md:p-12">
+            <div class="flex items-center mb-6">
+                <i class="fa-solid fa-film text-3xl text-gold mr-4"></i>
+                <h2 class="font-serif text-3xl md:text-4xl text-white font-bold tracking-wide border-b border-gold/30 pb-2 flex-grow">Introduction</h2>
+            </div>
+            
+            <div class="space-y-6 text-gray-300 leading-relaxed">
+                <p class="text-lg">
+                    <strong class="text-white">Film Details:</strong> Directed by the acclaimed <span class="text-gold">Marilou Diaz-Abaya</span> and released in 1998 during the centennial of Philippine Independence, *José Rizal* stands as a monumental cinematic achievement. Starring <span class="text-gold">Cesar Montano</span> in the titular role, the film was produced by GMA Films and boasts one of the most substantial budgets in Philippine cinematic history, reflecting the immense gravity of rendering the national hero's life on screen.
+                </p>
+                <p>
+                    <strong class="text-white">Purpose:</strong> The objective of this review is to deconstruct the film not merely as a piece of dramatic entertainment, but as a critical historical text. It aims to evaluate the cinematic choices made by Diaz-Abaya, specifically focusing on how they shape the modern understanding of Rizal’s legacy.
+                </p>
+                <div class="bg-darkBg/50 border-l-4 border-gold p-6 my-8 italic">
+                    <strong class="not-italic text-gold font-serif text-lg block mb-2">Thesis Statement</strong>
+                    While Marilou Diaz-Abaya's *José Rizal* (1998) occasionally employs dramatic creative liberties to construct a compelling narrative arc, it fundamentally succeeds in portraying a highly accurate and emotionally resonant depiction of the national hero, thereby cementing its significance as an indispensable educational tool for understanding 19th-century colonial Philippines and Rizal’s enduring legacy.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Summary Section -->
+    <section id="summary" class="py-24 px-4 bg-[#0d0d0d]">
+        <div class="max-w-4xl mx-auto fade-in-section">
+            <div class="flex items-center justify-center mb-10 text-center">
+                <div class="border-t border-gold w-1/4"></div>
+                <h2 class="font-serif text-3xl md:text-4xl text-white font-bold mx-6">Film Summary</h2>
+                <div class="border-t border-gold w-1/4"></div>
+            </div>
+            
+            <div class="bg-cardBg rounded-2xl p-8 md:p-12 card-hover shadow-xl">
+                <i class="fa-solid fa-scroll text-5xl text-gold/20 absolute right-12 top-12"></i>
+                <div class="space-y-5 text-gray-300 leading-relaxed text-justify relative z-10">
+                    <p>
+                        The film unfolds through a nonlinear narrative, primarily anchored by Rizal's imprisonment in Fort Santiago during the twilight of his life in 1896. As he awaits trial and inevitable execution, the story weaves seamlessly between his grim present and vibrant flashbacks illuminating his formative years, his extensive travels, and his intellectual awakening.
+                    </p>
+                    <p>
+                        Through a series of poignant interrogations and reflections, the film recounts his writing of the two subversive novels, <em>Noli Me Tangere</em> and <em>El Filibusterismo</em>. Strikingly, the narrative masterfully intertwines Reality with Fiction by visualizing sequences from his novels. His alter-egos, Crisostomo Ibarra and Simoun, are brought to life, blurring the lines between Rizal's actual existence and his profound literary imagination. The climax arrives with his dramatic trial and subsequent martyrdom at Bagumbayan, culminating in the spark that ignites the Philippine Revolution.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Historical Accuracy & Creative Liberties -->
+    <section id="historical-accuracy" class="py-24 px-4 bg-darkBg">
+        <div class="max-w-5xl mx-auto fade-in-section">
+            <div class="text-center mb-16">
+                <i class="fa-solid fa-scale-balanced text-4xl text-gold mb-4"></i>
+                <h2 class="font-serif text-3xl md:text-5xl text-white font-bold">Historical Accuracy &<br>Creative Liberties</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Subsection 1 -->
+                <div class="bg-cardBg p-8 rounded-xl card-hover relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-gold/10 rounded-bl-full group-hover:bg-gold/20 transition-colors"></div>
+                    <h3 class="font-serif text-xl text-gold font-bold mb-4 flex items-center">
+                        <i class="fa-solid fa-timeline mr-3"></i> Life & Context
+                    </h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        The film painstakingly reconstructs the socio-political climate of the late 19th-century Philippines. Rizal's experiences with the oppressive Frailocracy, his education at the Ateneo Municipal, and his ideological struggles in Europe align closely with documented historical timelines. The portrayal of the Propagandists and the Katipunan is notably grounded in reality.
+                    </p>
+                </div>
+
+                <!-- Subsection 2 -->
+                <div class="bg-cardBg p-8 rounded-xl card-hover relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-gold/10 rounded-bl-full group-hover:bg-gold/20 transition-colors"></div>
+                    <h3 class="font-serif text-xl text-gold font-bold mb-4 flex items-center">
+                        <i class="fa-solid fa-wand-magic-sparkles mr-3"></i> Creative Liberties
+                    </h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        To craft a cinematic masterpiece, Diaz-Abaya employed creative liberties, most notably the direct interaction between Rizal and Simoun in his prison cell. While historically impossible, this allegorical confrontation enhances the film by externalizing Rizal's internal conflict between peaceful reform and armed revolution. It strengthens Rizal's image as a deeply tormented yet steadfast intellectual.
+                    </p>
+                </div>
+
+                <!-- Subsection 3 -->
+                <div class="bg-cardBg p-8 rounded-xl card-hover relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-gold/10 rounded-bl-full group-hover:bg-gold/20 transition-colors"></div>
+                    <h3 class="font-serif text-xl text-gold font-bold mb-4 flex items-center">
+                        <i class="fa-solid fa-book-open mr-3"></i> Historical Sources
+                    </h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        The dialogue heavily borrows from Rizal's actual memoirs, letters to Ferdinand Blumentritt, and lines from his novels (Zaide, 1999). Comparisons with scholarly texts confirm that the trial sequences and the retraction controversy were handled with a balanced, well-researched perspective, rarely deviating from accepted historical debate (Ocampo, 2012).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Connection to Class Discussions -->
+    <section id="connection" class="py-24 px-4 bg-[#0d0d0d] relative">
+        <div class="max-w-4xl mx-auto fade-in-section">
+            <h2 class="font-serif text-3xl md:text-4xl text-white font-bold mb-10 border-l-4 border-gold pl-4">Connection to Class</h2>
+            
+            <div class="bg-cardBg p-8 md:p-12 rounded-2xl card-hover border border-white/5">
+                <i class="fa-solid fa-chalkboard-user text-3xl text-gold mb-6"></i>
+                <div class="space-y-6 text-gray-300">
+                    <p>
+                        Reflecting on our classroom modules, this film serves as a dynamic supplementary text. Class discussions concerning the harsh realities of the Spanish colonial hierarchy—the absolute power of the friars and the marginalization of the <em>Indios</em>—are brought to vivid reality. Seeing the execution of Gomburza visually contextualizes the catalyst for Rizal's lifelong crusade, as outlined in our lessons.
+                    </p>
+                    <p>
+                        Furthermore, the film illuminates the nuanced distinction between the reformists (La Solidaridad) and the separatists (Katipunan). It beautifully illustrates our lecture topics regarding Rizal's pacifist stance against Bonifacio's armed struggle, emphasizing that Rizal was a revolutionist of the mind before anything else.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Reflection & Critical Analysis -->
+    <section id="reflection" class="py-24 px-4 bg-darkBg">
+        <div class="max-w-5xl mx-auto fade-in-section">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-3xl md:text-5xl text-white font-bold mb-4">Reflection & Critical Analysis</h2>
+                <p class="text-gold tracking-widest uppercase text-sm">Evaluating Art and Legacy</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-8">
+                <!-- Personal & Modern Significance -->
+                <div class="md:w-1/2 space-y-8">
+                    <div class="bg-cardBg p-8 rounded-xl card-hover h-full">
+                        <h3 class="font-serif text-2xl text-white mb-4 border-b border-gold/20 pb-2">Impact & Significance</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                            <strong>Personal Reflection:</strong> The film transformed my perception of Rizal from a static, flawless marble monument in a park to a fragile, vulnerable, and profoundly human figure. Witnessing his homesickness, frustrations, and fear in the face of death made his ultimate sacrifice infinitely more heroic.
+                        </p>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            <strong>Modern Society:</strong> Today, in an era saturated with misinformation and shifting national identities, the film underscores the enduring necessity of critical thinking and education. It reminds modern Filipinos that true patriotism lies in speaking truth to power, a message as significant now as it was in 1896.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Film Critique -->
+                <div class="md:w-1/2">
+                    <div class="bg-cardBg p-8 rounded-xl card-hover h-full">
+                        <h3 class="font-serif text-2xl text-white mb-4 border-b border-gold/20 pb-2">Film Critique</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-video text-gold mt-1 mr-3"></i>
+                                <div>
+                                    <strong class="text-gray-200 block">Cinematography</strong>
+                                    <span class="text-gray-400 text-sm">The interplay of lighting and dark, sepia-toned flashbacks crafts a melancholic yet epic visual tone perfectly suited for historical tragedy.</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-clapperboard text-gold mt-1 mr-3"></i>
+                                <div>
+                                    <strong class="text-gray-200 block">Direction</strong>
+                                    <span class="text-gray-400 text-sm">Diaz-Abaya excels in pacing, ensuring the complex, non-linear storyline remains coherent rather than confusing.</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-masks-theater text-gold mt-1 mr-3"></i>
+                                <div>
+                                    <strong class="text-gray-200 block">Acting (Cesar Montano)</strong>
+                                    <span class="text-gray-400 text-sm">Montano delivers an intense, commanding performance. He captures both the fiery intellect and the quiet sorrow of Rizal flawlessly.</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-graduation-cap text-gold mt-1 mr-3"></i>
+                                <div>
+                                    <strong class="text-gray-200 block">Educational Effectiveness</strong>
+                                    <span class="text-gray-400 text-sm">Highly effective. It distills complex historical data into emotionally resonant narratives, ideal for classroom engagement.</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Conclusion -->
+    <section id="conclusion" class="py-24 px-4 bg-[#0d0d0d] bg-[url('https://www.transparenttextures.com/patterns/dark-matter.png')]">
+        <div class="max-w-3xl mx-auto fade-in-section text-center">
+            
+            <i class="fa-solid fa-quote-left text-4xl text-gold/50 mb-6"></i>
+            
+            <h2 class="font-serif text-3xl md:text-4xl text-white font-bold mb-6">Final Assessment</h2>
+            
+            <p class="text-gray-300 text-lg mb-10 leading-relaxed">
+                In summary, <em>José Rizal (1998)</em> is a triumph of Philippine cinema. It successfully humanizes a colossal historical figure while accurately depicting the socio-political malignancies of the Spanish colonial era. 
+            </p>
+
+            <div class="bg-cardBg border border-gold/30 rounded-2xl p-8 mb-10 inline-block text-left relative shadow-2xl">
+                <!-- Decorative element -->
+                <div class="absolute -top-4 -right-4 bg-gold text-darkBg text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Verdict</div>
+                
+                <h3 class="text-gold font-bold mb-2">Rating Scale (1-5)</h3>
+                <div class="flex space-x-2 text-2xl text-gold mb-2">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <p class="text-white text-xl font-serif">Score: <span class="font-bold">5 - Outstanding</span></p>
+                
+                <div class="mt-6 border-t border-gray-700 pt-4">
+                    <p class="text-gray-400 italic">I highly recommend this film to all students and history enthusiasts. It is an indispensable visual aid that breathing life into textbook history.</p>
+                </div>
+            </div>
+
+            <p class="text-gray-400 text-sm">
+                Rizal's legacy is not confined to the novels he wrote or the bullets that struck him; it lives in the ongoing pursuit of Filipino excellence and freedom. This film ensures that flame never dims.
+            </p>
+        </div>
+    </section>
+
+    <!-- 8. References Section -->
+    <section id="references" class="py-24 px-4 bg-darkBg border-t border-gold/10">
+        <div class="max-w-4xl mx-auto fade-in-section">
+            <h2 class="font-serif text-3xl text-white font-bold mb-8 flex items-center">
+                <i class="fa-solid fa-book text-gold mr-4"></i> References
+            </h2>
+            
+            <div class="bg-cardBg p-8 rounded-xl card-hover">
+                <ul class="space-y-6 text-sm text-gray-400 list-none pl-0 hanging-indent" style="text-indent: -2em; padding-left: 2em;">
+                    <li>
+                        Diaz-Abaya, M. (Director). (1998). <em>José Rizal</em> [Film]. GMA Films.
+                    </li>
+                    <li>
+                        Ocampo, A. R. (2012). <em>Rizal without the overcoat</em> (6th ed.). Anvil Publishing.
+                    </li>
+                    <li>
+                        Rizal, J. (1887). <em>Noli Me Tangere</em>. Berliner Buchdruckerei-Action-Gesellschaft.
+                    </li>
+                    <li>
+                        Zaide, G. F., & Zaide, S. M. (1999). <em>Jose Rizal: Life, works, and writings of a genius, writer, scientist, and national hero</em>. All-Nations Publishing Co.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8 border-t border-gold/20">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h3 class="font-serif text-gold text-2xl mb-2">JR '98</h3>
+            <p class="text-gray-500 text-sm">Academic Film Review Website</p>
+            <div class="mt-4 flex justify-center space-x-4 text-gray-500">
+                <span class="text-xs">&copy; 2026 Film Review Project</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" id="back-to-top" class="fixed bottom-8 right-8 bg-gold text-darkBg p-4 rounded-full shadow-lg hover:bg-white hover:text-darkBg transition-all flex items-center justify-center">
+        <i class="fa-solid fa-arrow-up border-none text-xl"></i>
+    </a>
+
+    <!-- Link JS File -->
+    <script src="./script.js"></script>
+</body>
+</html>
